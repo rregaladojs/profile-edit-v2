@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { Card, Avatar, Button, Modal, Input, Upload } from 'antd';
+import { Card, Avatar, Button, Modal, Input, Upload, Space, Typography } from 'antd';
 import { EditOutlined, LinkedinOutlined, MoreOutlined, UploadOutlined } from '@ant-design/icons';
+
+const { Text } = Typography;
 
 const { Meta } = Card;
 
@@ -118,7 +120,11 @@ export default function ProfileSection() {
             }}
             onChange={handleImageChange}
           >
-            <Button icon={<UploadOutlined />}>Change Photo</Button>
+            <Space direction='vertical'>
+              <Button icon={<UploadOutlined />}>Change Photo</Button>
+              <Text>Supported formats: .jpg, .png</Text>
+            </Space>
+            
           </Upload>
         </div>
       </Modal>
